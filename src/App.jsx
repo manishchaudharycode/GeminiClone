@@ -1,14 +1,19 @@
 import React from "react"
 import Sidebar from './components/Sidebar.jsx'
-import Leftbar from "./components/Leftbar.jsx";
+import MainContent from './components/MainContent.jsx'
+
 
 function App() {
   
 
   return (
     <>
-    <Sidebar />
-    <Leftbar />
+    <div className="flex">
+       <Sidebar />
+    <MainContent />
+    </div>
+   
+    
     </>
   )
 }

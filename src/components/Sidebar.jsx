@@ -7,46 +7,51 @@ import { Menu2 } from "tabler-icons-react";
 import { QuestionMark, History } from "tabler-icons-react";
 
 function Sidebar() {
-  const [extended, setExtended] = useState(false);
+  
+   const[extended, setExtended] = useState(false)
 
   return (
-    <div
-      style={{ display: "inline-flex" }}
-      className="justify-between bg-[#f0f4f9] min-h-[100vh] flex-col px-[25px] py-[15px] b"
-    >
-      <div style={{}} className="Top  ">
-        <Menu2 onClick={() => setExtended(prev=>!prev)} className="w-[20px]  " />
-        <div style={{display: "inline-flex"}} className="new-chat mt-[10px] flex items-center gap-[10px] px-[10px] py-[15px] bg-[#e6eaf1] rounded-2xl hover:bg-[#e1eaf9] text-gray-400 cursor-pointer    ">
-          <Plus className="w-[20px]" />
-          {extended ? <p>New chat</p> : null}
+    <div className="min-h-screen inline-flex flex-col justify-between bg-[#cbdffa] py-7 px-4">
+      <div>
+        <Menu2 
+        onClick={() => setExtended(!extended)} 
+        className="text-2xl block cursor-pointer" />
+        <div className="mt-2.5 inline-flex items-center gap-2.5 py-2.5 px-3.5 text-[14px] text-gray-5 00 cursor-pointer bg-gray-300 ">
+          <Plus className="rounded-full"/>
+          {extended? <p>New Chat</p>: null}
         </div>
-        {extended ? 
-          <div className="recent flex-col ">
-            <p className="recent-title mt-[30px] mb-[20px] ">Recent</p>
-            <div className="recent-entry items-start gap-4 p-4 pr-4 rounded-lg text-[#282828] cursor-pointer flex hover:bg-[#c8d5e4]">
-              <Message />
-              <p>What is react ...</p>
-            </div>
-          </div>
-         : null}
-      </div>
 
-      <div className="bottom mb-10  ">
-        <div className="bottom-item recent-entry  mb-5 flex items-center gap-3 ">
-          <QuestionMark className="w-[20px]"/>
-          {extended? <p>Help</p> : null}
+        {extended? 
+        <div className="flex flex-col ">
+           <p className="mt-7 mb-5">Recent</p>
+           <div className="flex items-center gap-2 p-2 pr-10rounded-[50px] text-slate-700 cursor-pointer hover:bg-gray-300">
+            <Message className="text-2xl"/>
+            <p>what is React js</p>
+           </div>
         </div>
-        <div className="bottom-item recent-entry flex mb-5 gap-3 items-center">
-          <History className="w-[20px]"/>
-          {extended? <p>Activity</p> : null}
-        </div>
-        <div className="bottom-item recent-entry flex gap-3 items-center">
-          <Settings className="w-[20px]" />
-         {extended?  <p className="">Settings</p> : null}
-        </div>
+        : null}
+        
+      </div>
+      
+      <div className="flex flex-col ">
+         <div className="flex items-center pr-10 p-2 gap-3 rounded-[50px] text-slate-700 cursor-pointer hover:bg-gray-300">
+          <QuestionMark className="text-2xl"/>
+          {extended? <p>Help </p> : null}
+         </div>
+
+         <div className="flex items-center pr-10 p-2 gap-3 rounded-[50px] text-slate-700 cursor-pointer hover:bg-gray-300">
+          <History className="text-2xl"/>
+         {extended?  <p>Activity </p> : null}
+         </div>
+
+         <div className="flex items-center pr-10 p-2 gap-3 rounded-[50px] text-slate-700 cursor-pointer hover:bg-gray-300">
+          <Settings className="text-2xl"/>
+          {extended? <p>Setting </p> : null}
+         </div>
       </div>
     </div>
   );
 }
 
 export default Sidebar;
+ 
